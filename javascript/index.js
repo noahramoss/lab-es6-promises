@@ -117,19 +117,17 @@ async function makeBroccoli() {
 makeBroccoli();
 
 // Bonus 2 - Promise all
-// Bonus 2 - Promise.all()
-// 1. Preparamos a nuestros 8 "pinches de cocina" (creamos las 8 promesas a la vez)
-const p0 = obtainInstruction("brusselsSprouts", 0);
-const p1 = obtainInstruction("brusselsSprouts", 1);
-const p2 = obtainInstruction("brusselsSprouts", 2);
-const p3 = obtainInstruction("brusselsSprouts", 3);
-const p4 = obtainInstruction("brusselsSprouts", 4);
-const p5 = obtainInstruction("brusselsSprouts", 5);
-const p6 = obtainInstruction("brusselsSprouts", 6);
-const p7 = obtainInstruction("brusselsSprouts", 7);
 
-// 2. Mandamos a todos a la vez usando Promise.all()
-Promise.all([step0, step1, step2, step3, step4, step5, step6, step7])
+const step1 = obtainInstruction("brusselsSprouts", 0);
+const step2 = obtainInstruction("brusselsSprouts", 1);
+const step3 = obtainInstruction("brusselsSprouts", 2);
+const step4 = obtainInstruction("brusselsSprouts", 3);
+const step5 = obtainInstruction("brusselsSprouts", 4);
+const step6 = obtainInstruction("brusselsSprouts", 5);
+const step7 = obtainInstruction("brusselsSprouts", 6);
+const step8 = obtainInstruction("brusselsSprouts", 7);
+
+Promise.all([step1, step2, step3, step4, step5, step6, step7, step8])
   .then((stepsDone) => {
     stepsDone.forEach((step) => {
       document.querySelector("#brusselsSprouts").innerHTML += `<li>${step}</li>`;
